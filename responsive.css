@@ -1,0 +1,28 @@
+/* ---- Navigation Bar ---- */
+
+@media (max-width: 400px) {
+  nav{
+    padding: 0 10px;
+  }
+
+  .nav-buttons{
+    gap: 10px;
+  }
+}
+
+/* ---- Popup ---- */
+
+@media (max-width: 400px) {
+  .result-popup-box,
+  .about-popup-box{
+    width: 90%;
+  }
+}
+
+/* ---- Thunder Calculator Area ---- */
+
+@media (max-width: 400px) {
+  .thunder-container{
+    padding: 50px 20px 10px 20px;
+  }
+}

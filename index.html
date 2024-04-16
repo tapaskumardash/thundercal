@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="images/icon-512x512.png" type="image/x-icon">
+  <!-- Manifest -->
+  <link rel="manifest" href="manifest.json">
+  <!-- Icon pack -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+  <!-- Title -->
+  <title>ThunderCal</title>
+</head>
+<body>
+  <!-- Header and Navigation Bar -->
+  <header>
+    <nav>
+      <div class="nav-logo">
+        <i class='bx bxs-bolt-circle' ></i>
+        <span>ThunderCal</span>
+      </div>
+
+      <div class="nav-buttons">
+        <div class="unit-toggle">
+          <span id="unit-km" class="active-unit-toggle">Km</span>
+          <span id="unit-mi" class="">Mi</span>
+        </div>
+
+        <i class='bx bxs-info-circle' id="about-app-btn"></i>
+        <i class='bx bxs-envelope' id="contact-btn"></i>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Thunder calculator section -->
+  <div class="thunder-container">
+    <div class="thunder-box">
+      <span id="thunder-instruction-msg">Press the thunder icon when you see the light!</span>
+      <button id="thunder-btn" class="bx bxs-bolt"></button>
+    </div>
+
+    <div id="result-popup">
+
+    </div>
+  </div>
+
+  <!-- About Popup -->
+  <div id="about-popup">
+    <div class="about-popup-box">
+      <span>About</span>
+      <div class="about-popup-box-text">
+        <p>Introducing ThunderCal: Your go-to app for lightning safety. With ThunderCal, accurately determine lightning's distance from your location in just a few clicks.</p>
+        <p>Simply tap the thunder icon upon seeing the flash, then again upon hearing the thunder. Receive instant calculations in kilometers or miles, tailored to your preference.</p>
+        <p>Our app provides essential safety advice based on proximity: red alerts for imminent danger, yellow for caution, and green for safe distances. Stay informed and stay safe with ThunderCal – your reliable companion for lightning awareness.</p>
+      </div>
+      <i class='bx bx-x' id="about-popup-close-btn"></i>
+    </div>
+
+    <span class="developer-credit">Crafted by Tapas</span>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="app.js"></script>
+  <script>
+    window.addEventListener('load', () => {
+      registerSW();
+    });
+
+    async function registerSW() {
+      if ('serviceWorker' in navigator) {
+        try {
+          await navigator
+                  .serviceWorker
+                  .register('serviceworker.js');
+        }
+        catch (e) {
+          console.log('Registration failed');
+        }
+      }
+    }
+  </script>
+</body>
+</html>
