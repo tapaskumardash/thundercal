@@ -1,5 +1,6 @@
 const staticCacheName = "thundercal-v1";
 
+// Files to cache
 const filesToCache = [
   '/',
   'index.html',
